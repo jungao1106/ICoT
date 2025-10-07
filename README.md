@@ -60,7 +60,8 @@ After all datasets are downloaded, update the path in run.py
 bash run.sh
 ```
 
-
+## 📧 Contact
+If you have questions with ICoT, please feel free to contact us at junegao1106@gmail.com.
 
 ## 📜 Citation
 
