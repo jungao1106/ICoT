@@ -81,17 +81,17 @@ if __name__ == "__main__":
                         {"type": "text", "text": mcot_induct_0},
                         {
                             "type": "image",
-                            "image": './m3cot/qwen2vl_m3cot_induct_0.png',
+                            "image": './path/to/icot_image_0.png',
                         },
                         {"type": "text", "text": mcot_induct_1},
                         {
                             "type": "image",
-                            "image": './m3cot/qwen2vl_m3cot_induct_1.png',
+                            "image": './path/to/icot_image_1.png',
                         },
                         {"type": "text", "text": mcot_induct_2},
                         {
                             "type": "image",
-                            "image": './m3cot/qwen2vl_m3cot_induct_2.png',
+                            "image": './path/to/icot_image_2.png',
                         },
                         {"type": "text", "text": mcot_induct_3},
                         {"type": "text", "text": mcot_induct_4 + '\n'},
