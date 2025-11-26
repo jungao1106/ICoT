@@ -1142,8 +1142,6 @@ class Qwen2VLModel(Qwen2VLPreTrainedModel):
 
             if output_attentions:
                 all_self_attns += (layer_outputs[1],)
-                
-            break
 
         hidden_states = self.norm(hidden_states)
 
