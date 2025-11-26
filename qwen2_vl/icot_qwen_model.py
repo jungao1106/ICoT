@@ -7,7 +7,7 @@ from transformers import Qwen2VLForConditionalGeneration
 from transformers.models.qwen2_vl.modeling_qwen2_vl import Qwen2VLCausalLMOutputWithPast
 from transformers.cache_utils import StaticCache
 from transformers.utils import ModelOutput
-
+import copy
 
 class Qwen2VLForInterCoT(Qwen2VLForConditionalGeneration):
     num_line_break = 0
@@ -130,10 +130,23 @@ class Qwen2VLForInterCoT(Qwen2VLForConditionalGeneration):
                 position_ids = position_ids.add(delta)
                 position_ids = position_ids.unsqueeze(0).expand(3, -1, -1)
         
-        if self.num_line_break % 2 == 0 and judge and self.num_sub_imgs < 3:
+        if self.num_line_break and True and self.num_sub_imgs < 3:
+            
+            tmp_copy_pkv = copy.deepcopy(past_key_values)
+            with torch.no_grad():
+                outputs = self.model(
+                                input_ids=None,
+                                past_key_values=tmp_copy_pkv,
+                                inputs_embeds=inputs_embeds,
+                                use_cache=False,
+                                output_attentions=True,
+                                output_hidden_states=output_hidden_states,
+                                return_dict=return_dict,
+                            )
+            del tmp_copy_pkv
             image_attentions = torch.cat(outputs.attentions, dim=1).mean(dim=1)[:, -1]
             image_attentions = image_attentions[self.query_image_mask]
-            indices = image_attentions.topk(self.num_selected_patches)[1].sort()[0]
+            indices = image_attentions.topk(16)[1].sort()[0]
             sampled_reasoning_embeds = self.reasoning_img_embeds[indices]
             x_ids = torch.tensor([151652] + [151655]*16 + [151653], device=input_ids.device).unsqueeze(0)
             x_embeds = self.model.embed_tokens(x_ids)
