@@ -146,6 +146,10 @@ class Qwen2VLForInterCoT(Qwen2VLForConditionalGeneration):
             del tmp_copy_pkv
             image_attentions = torch.cat(outputs.attentions, dim=1).mean(dim=1)[:, -1]
             image_attentions = image_attentions[self.query_image_mask]
+            self.query_image_mask = torch.cat([self.query_image_mask, torch.zeros(self.query_image_mask.shape[0],
+                                                                        19,
+                                                                        device=self.query_image_mask.device).bool()],
+                                                                        dim=1) 
             indices = image_attentions.topk(16)[1].sort()[0]
             sampled_reasoning_embeds = self.reasoning_img_embeds[indices]
             x_ids = torch.tensor([151652] + [151655]*16 + [151653], device=input_ids.device).unsqueeze(0)
