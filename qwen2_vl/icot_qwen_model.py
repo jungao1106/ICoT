@@ -91,7 +91,8 @@ class Qwen2VLForInterCoT(Qwen2VLForConditionalGeneration):
                 self.query_image_end = (input_ids == 151653).nonzero(as_tuple=True)[1][-1]
                 self.query_image_mask = torch.zeros_like(input_ids, device=input_ids.device, dtype=torch.bool)
                 self.query_image_mask[:, self.query_image_start: self.query_image_end] = True
-
+                self.num_line_break = 0
+                self.num_sub_imgs = 0
                 n_image_tokens = (input_ids == self.config.image_token_id).sum().item()
                 n_image_features = image_embeds.shape[0]
                 if n_image_tokens != n_image_features:
