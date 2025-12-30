@@ -8,7 +8,7 @@ TRAING_CASE_1 = {'id': 'physical-commonsense-1426',
 'All options are correct'],
 'context': '',
 'answer': 'D',
-'rationale': 'First, the image shows large ovens in a kitchen area that indicates it is a kitchen of a restaurant.\nTherefore, option A is correct.\nSecond, there are grease stains on the front of appliances which are indicative of not being cleaned in a while.\nSo option B is correct answer.\nThird, cabinet doors are opened up throughout the kitchen which shows someone was searching for something.\nSo option C is incorrect.\nTherefore, we can infer that option A, B and C are all correct.\nSo, option "(D) All options are correct" is correct answer.',
+'rationale': 'First, the image shows large ovens in a kitchen area that indicates it is a kitchen of a restaurant.\nTherefore, option A is correct.\nSecond, there are grease stains on the front of appliances which are indicative of not being cleaned in a while.\nSo option B is correct answer.\nThird, cabinet doors are opened up throughout the kitchen which shows someone was searching for something.\nSo option C is correct.\nTherefore, we can infer that option A, B and C are all correct.\nSo, option "(D) All options are correct" is correct answer.',
 'split': 'train',
 'image': 'data\\images\\physical-commonsense-1426.png',
 'domain': 'commonsense',
@@ -48,7 +48,7 @@ D. {}
 
 mcot_induct_1 = '''Let's think step by step.\nFirst, the image shows large ovens in a kitchen area that indicates it is a kitchen of a restaurant. Therefore, option A is correct.'''
 mcot_induct_2 = '''Second, there are grease stains on the front of appliances which are indicative of not being cleaned in a while. So option B is correct answer.'''
-mcot_induct_3 = '''Third, cabinet doors are opened up throughout the kitchen which shows someone was searching for something. So option C is incorrect. Therefore, we can infer that option A, B and C are all correct.'''
+mcot_induct_3 = '''Third, cabinet doors are opened up throughout the kitchen which shows someone was searching for something. So option C is correct. Therefore, we can infer that option A, B and C are all correct.'''
 mcot_induct_4 = '''Answer: {}\n'''.format(TRAING_CASE_1['answer'])
 
 
