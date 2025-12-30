@@ -282,7 +282,7 @@ TRAING_CASE_1 = {'id': 'physical-commonsense-1426',
   'All options are correct'],
  'context': '',
  'answer': 'D',
- 'rationale': 'First, the image shows large ovens in a kitchen area that indicates it is a kitchen of a restaurant.\nTherefore, option A is correct.\nSecond, there are grease stains on the front of appliances which are indicative of not being cleaned in a while.\nSo option B is correct answer.\nThird, cabinet doors are opened up throughout the kitchen which shows someone was searching for something.\nSo option C is incorrect.\nTherefore, we can infer that option A, B and C are all correct.\nSo, option "(D) All options are correct" is correct answer.',
+ 'rationale': 'First, the image shows large ovens in a kitchen area that indicates it is a kitchen of a restaurant.\nTherefore, option A is correct.\nSecond, there are grease stains on the front of appliances which are indicative of not being cleaned in a while.\nSo option B is correct answer.\nThird, cabinet doors are opened up throughout the kitchen which shows someone was searching for something.\nSo option C is correct.\nTherefore, we can infer that option A, B and C are all correct.\nSo, option "(D) All options are correct" is correct answer.',
  'split': 'train',
  'image': 'data\\images\\physical-commonsense-1426.png',
  'domain': 'commonsense',
@@ -357,7 +357,7 @@ A. {}
 B. {}
 C. {}
 D. {}
-<image11-21-0-11>First, the image shows large ovens in a kitchen area that indicates it is a kitchen of a restaurant. Therefore, option A is correct. <image4-10-23-29>Second, there are grease stains on the front of appliances which are indicative of not being cleaned in a while. So option B is correct answer. <image21-32-1-9>Third, cabinet doors are opened up throughout the kitchen which shows someone was searching for something. So option C is incorrect. Therefore, we can infer that option A, B and C are all correct.
+<image11-21-0-11>First, the image shows large ovens in a kitchen area that indicates it is a kitchen of a restaurant. Therefore, option A is correct. <image4-10-23-29>Second, there are grease stains on the front of appliances which are indicative of not being cleaned in a while. So option B is correct answer. <image21-32-1-9>Third, cabinet doors are opened up throughout the kitchen which shows someone was searching for something. So option C is correct. Therefore, we can infer that option A, B and C are all correct.
 Answer: {}'''.format(TRAING_CASE_1['question'], *TRAING_CASE_1['choices'], TRAING_CASE_1['answer'])
 
 
